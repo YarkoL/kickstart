@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 import { Button, Form, Input, Message } from 'semantic-ui-react'
 import factory from '../../ethcode/factory'
 import web3 from '../../ethcode/web3'
+import { Router } from '../../routes'
 
 class CampaignNew extends Component {
 	state = {
@@ -21,6 +22,7 @@ class CampaignNew extends Component {
 			.send({
 				from: accounts[0]
 			});	
+			Router.pushRoute('/');
 		} catch(err) {
 			this.setState({errorMsg:err.message});
 		}
